@@ -1,8 +1,4 @@
 from pyo import *
-s = Server(buffersize=1024).boot()
-s.start()
-#%%
-#
 class Av:
     idCounter=0;
     def __init__(self,audio=Sine(440),shape=0,x=0,y=0,w=100,h=100,hue=255,sat=255,lum=255,alpha=255,rot=0,group=0):
@@ -148,20 +144,3 @@ class Av:
     @group.setter
     def group(self,val):
         self.set('group',val)
-
-
-q = []
-for n in range(3,50):
-    q.append(Av(Sine(n*50)*(0.1/n)*p,x=n%10*30,y=int(n/10)*30,w=10,h=10,hue=55))
-for o in q:
-    o.stop()
-for o in q:
-    o.start()
-p.mul=1
-for o in q:
-    o.x=p+o.x
-x=1
-for o in q:
-    o.sat=Abs(p*255)
-    o.x += o.sat
-q.x.mul=0.4
