@@ -1,2 +1,2 @@
 # pyo-av
-audiovisual conding setup for pyo
+audiovisual coding setup for pyo
